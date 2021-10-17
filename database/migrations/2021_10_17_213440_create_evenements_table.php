@@ -18,6 +18,9 @@ class CreateEvenementsTable extends Migration
             $table->date('date');
             $table->string('heure');
             $table->integer('confirmed');
+            $table->text('details');
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('type_incident_id')->constrained('type_incidents');
             $table->timestamps();
         });
     }
